@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "SwiftType - 儿童键盘打字学习软件",
   "main": "./out/main/index.js",
-  "author": "SwiftType Team",
+  "author": {
+    "name": "SwiftType Team",
+    "email": "swifttype@example.com"
+  },
   "license": "MIT",
   "scripts": {
     "dev": "electron-vite dev",
