@@ -1,0 +1,56 @@
+/* src/renderer/styles/keyboard.css
+ * 键盘布局基础样式
+ * 键的视觉样式（高亮、闪烁、热力图、手指颜色、宽度变体等）
+ * 由 Key.vue 的 scoped style 管理，此处不再重复定义
+ */
+
+/* 键盘容器 */
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--key-gap);
+  padding: var(--spacing-lg);
+  background: var(--color-bg-card);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* 键盘行 */
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  gap: var(--key-gap);
+}
+
+/* 手指提示 */
+.finger-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--color-highlight);
+  border-radius: 6px;
+  margin-top: 16px;
+}
+
+.finger-icon {
+  font-size: 20px;
+}
+
+.finger-text {
+  font-size: 16px;
+  color: var(--color-text);
+}
+
+/* 提示模式 - 键盘闪烁 */
+.keyboard.hint-mode .key.highlight {
+  animation: pulse 0.8s ease infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}

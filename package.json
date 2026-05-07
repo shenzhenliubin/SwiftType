@@ -1,0 +1,58 @@
+{
+  "name": "swifttype",
+  "version": "1.0.0",
+  "description": "SwiftType - 儿童键盘打字学习软件",
+  "main": "./out/main/index.js",
+  "author": "SwiftType Team",
+  "license": "MIT",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "preview": "electron-vite preview",
+    "start": "electron-vite preview",
+    "test": "vitest",
+    "test:unit": "vitest run tests/unit",
+    "test:e2e": "playwright test",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "dependencies": {
+    "electron-store": "^8.0.0",
+    "pinia": "^2.1.0",
+    "vue": "^3.4.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "@vitejs/plugin-vue": "^5.0.0",
+    "electron": "^33.0.0",
+    "electron-builder": "^24.0.0",
+    "electron-vite": "^2.0.0",
+    "vite": "^5.0.0",
+    "vitest": "^1.0.0",
+    "jsdom": "^24.0.0"
+  },
+  "build": {
+    "appId": "com.swifttype.app",
+    "productName": "SwiftType",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "out/**/*",
+      "resources/**/*"
+    ],
+    "mac": {
+      "category": "public.app-category.education",
+      "icon": "resources/icon.icns",
+      "target": ["dmg", "zip"]
+    },
+    "win": {
+      "icon": "resources/icon.ico",
+      "target": ["nsis", "portable"]
+    },
+    "linux": {
+      "icon": "resources/icon.png",
+      "target": ["AppImage", "deb"]
+    }
+  }
+}
